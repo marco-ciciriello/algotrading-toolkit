@@ -1,3 +1,6 @@
+# Code snippet for scraping Yahoo! Finance for balance sheet, income statement
+# and cash flow statement using BeautifulSoup
+
 import pandas as pd
 import requests
 

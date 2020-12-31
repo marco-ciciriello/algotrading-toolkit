@@ -1,3 +1,5 @@
+# Code snippet for extracting historical close price data using YahooFinancials
+
 import datetime as dt
 import pandas as pd
 
