@@ -2,8 +2,7 @@ import datetime as dt
 import numpy as np
 import yfinance as yf
 
-# Download historical data for required stocks
-ticker = '^GSPC'
+ticker = 'AAPL'
 snp = yf.download(ticker, dt.date.today() - dt.timedelta(1825), dt.datetime.today())
 
 

@@ -45,9 +45,6 @@ fig, (ax0, ax1) = plt.subplots(nrows=2, ncols=1, sharex=True, sharey=False, figs
                                gridspec_kw={'height_ratios': [2.5, 1]})
 df.iloc[-100:, 4].plot(ax=ax0)
 ax0.set(ylabel='Adj Close')
-
 df.iloc[-100:, [-2, -1]].plot(ax=ax1)
 ax1.set(xlabel='Date', ylabel='MACD/Signal')
-
-# Title the figure
 fig.suptitle('Stock Price with MACD', fontsize=14, fontweight='bold')
