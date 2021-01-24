@@ -10,7 +10,6 @@ tickers = ['MSFT', 'AMZN', 'AAPL', 'CSCO', 'IBM', 'FB']
 close_prices = pd.DataFrame()
 drop = []
 attempt = 0
-# Initialise list to store tickers whose close price was successfully extracted
 
 while len(tickers) != 0 and attempt <= 5:
     tickers = [j for j in tickers if j not in drop]
