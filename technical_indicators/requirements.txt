@@ -1,4 +1,6 @@
+alpha-vantage==2.3.1
 pandas==1.2.0
 statsmodels==0.12.1
 stocktrends==0.1.4
+TA-Lib==0.4.0
 yfinance==0.1.55
