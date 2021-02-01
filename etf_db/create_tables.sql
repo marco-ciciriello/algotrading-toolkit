@@ -3,7 +3,7 @@ CREATE TABLE stock (
     symbol TEXT NOT NULL,
     name TEXT NOT NULL,
     exchange TEXT,
-    is_etf BOOLEAN NOT NULL,
+    is_etf BOOLEAN NOT NULL
 );
 
 CREATE TABLE etf_holding (
@@ -12,8 +12,9 @@ CREATE TABLE etf_holding (
     dt DATE NOT NULL,
     shares NUMERIC,
     weight NUMERIC,
-    PRIMARY KEY (etf_id, holding_id, dt)
-    CONSTRAINT fk_etf FOREIGN KEY (stock_id) REFERENCES stock (id)
+    PRIMARY KEY (etf_id, holding_id, dt),
+    CONSTRAINT fk_etf FOREIGN KEY (etf_id) REFERENCES stock (id),
+    CONSTRAINT fk_holding FOREIGN KEY (holding_id) REFERENCES stock (id)
 );
 
 CREATE TABLE stock_price (
@@ -24,6 +25,9 @@ CREATE TABLE stock_price (
     low NUMERIC NOT NULL,
     close NUMERIC NOT NULL,
     volume NUMERIC NOT NULL,
-    PRIMARY KEY (stock_id, dt)
+    PRIMARY KEY (stock_id, dt),
     CONSTRAINT fk_stock FOREIGN KEY (stock_id) REFERENCES stock (id)
 );
+
+CREATE INDEX ON stock_price (stock_id, dt DESC);
+SELECT create_hypertable('stock_price', 'dt');

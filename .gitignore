@@ -142,3 +142,4 @@ cython_debug/
 .vscode
 
 # Project files
+etf_db/config.py
