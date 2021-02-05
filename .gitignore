@@ -143,3 +143,4 @@ cython_debug/
 
 # Project files
 etf_db/config.py
+sentiment_analysis/wsb_tracker/config.py
